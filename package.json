@@ -14,5 +14,6 @@
   },
   "license": "MIT",
   "dependencies": {
+    "mysql": "^2.17.1"
   }
 }

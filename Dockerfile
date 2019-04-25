@@ -6,11 +6,10 @@ ENV SCAMPDB_VER=${SCAMPDB_VER}
 ENV SCAMP_SERVICE_NAME=scamp-db
 
 WORKDIR /service/
-COPY service.js /service/scamp-db/
 COPY lib /service/scamp-db/
 COPY entrypoint.sh /service/scamp-db/entrypoint.sh
 
 #TODO: Handle SCAMP params as envrionment variables
 COPY scamp.conf /etc/scamp/scamp.conf
 
-CMD ["/service/scamp-db/entrypoint.sh"]
+ENTRYPOINT ["/service/scamp-db/entrypoint.sh"]
