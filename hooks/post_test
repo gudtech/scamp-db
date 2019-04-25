@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-echo "------ HOOK START - POST_TEST -------"
-printenv
-
-echo "------ HOOK END - POST_TEST -------"

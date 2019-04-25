@@ -1,6 +1,3 @@
 #!/usr/bin/env sh
 
-echo "------ HOOK START - POST_PUSH -------"
-printenv
-
-echo "------ HOOK END - POST_PUSH -------"
+docker inspect $IMAGE_NAME | python -c 'import sys, json; env = json.load(sys.stdin)[0]["ContainerConfig"]["Env"]; print "\n".join( "ENV_" + x for x in env)' | export

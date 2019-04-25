@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-echo "------ HOOK START - PRE_TEST -------"
-printenv
-
-echo "------ HOOK END - PRE_TEST -------"
