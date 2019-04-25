@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker build --build-arg SCAMPDB_VER=$(git rev-parse --short HEAD) -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+printenv
+export SCAMPDB_VER=$(git rev-parse --short HEAD)
+docker build --build-arg SCAMPDB_VER=$SCAMPDB_VER -f $DOCKERFILE_PATH -t $IMAGE_NAME:$SCAMPDB_VER-js$SCAMPJS_VER .
