@@ -1,7 +1,9 @@
 FROM gudtech/scamp-js:latest
 
+ARG SCAMPDB_VER
+ENV SCAMPDB_VER=${SCAMPDB_VER}
+
 ENV SCAMP_SERVICE_NAME=scamp-db
-ENV SCAMP_SERVICE_DB_VER=$(git rev-parse --short HEAD)
 
 WORKDIR /service/
 COPY service.js /service/scamp-db/
