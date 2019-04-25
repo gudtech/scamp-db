@@ -1,3 +1,6 @@
 #!/usr/bin/env sh
 
 docker inspect $IMAGE_NAME | python -c 'import sys, json; env = json.load(sys.stdin)[0]["ContainerConfig"]["Env"]; print "\n".join( "ENV_" + x for x in env)' | export
+
+docker tag $IMAGE_NAME $DOCKER_REPO:$ENV_SCAMPDB_VER-js$ENV_SCAMPJS_VER
+docker push $DOCKER_REPO:$ENV_SCAMPDB_VER-js$ENV_SCAMPJS_VER
